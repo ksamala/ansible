@@ -1,0 +1,5 @@
+---
+- hosts: localnodes
+  user: root
+  roles:
+   - apache

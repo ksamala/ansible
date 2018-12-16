@@ -1,0 +1,4 @@
+tasks:
+  - name: checking the file exists
+    command: touch file.txt
+    when: $(! -s /ksam/file.txt)

@@ -1,0 +1,8 @@
+- name: Ansible Template Example
+  template:
+    src: hello.j2
+    dest: /hello_world.txt
+    mode: 0744
+
+- name: cat
+  shell: cat /hello_world.txt

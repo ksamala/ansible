@@ -1,0 +1,3 @@
+---
+# vars file for ci
+dock_img: 'centos7-systemd-docker-demo' 

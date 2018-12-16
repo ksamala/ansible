@@ -1,0 +1,4 @@
+---
+- name: ensure start status
+  service: name=httpd state=started enabled=yes
+  notify: restart apache

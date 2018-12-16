@@ -1,0 +1,30 @@
+---
+    - name: Test docker_inventory, this will not connect to any hosts
+      hosts: localnodes
+      gather_facts: no
+      tasks:
+        - yum:
+            name: git
+            state: present
+
+        - yum:
+            name: httpd
+            state: present
+
+        - yum:
+            name: lsof
+            state: present
+
+        - yum:
+            name: rsync
+            state: present
+            
+        - yum:
+            name: telnet
+            state: present   
+
+        - yum:
+            name: mlocate
+            state: present
+      
+        - shell: updatedb  

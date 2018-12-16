@@ -1,0 +1,14 @@
+---
+- set_fact:
+    containerName: "dock_ksam-{{ 999 | random }}" 
+
+- name: "start container"
+  shell: "docker run -d -it --name {{ containerName }} {{ dock_img }} /bin/bash"
+
+- name: "add container to inventory"
+  add_host:
+    name: "docker_host"
+    ansible_host: "{{ containerName }}"
+    ansible_connection: docker
+    ansible_user: root
+    

@@ -1,0 +1,7 @@
+---
+# handlers file for rhel_temp
+- name: restart apache 
+  service: name=httpd state=restarted
+
+- name: update db for mlocate
+  shell: updatedb

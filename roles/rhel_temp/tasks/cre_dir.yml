@@ -1,0 +1,39 @@
+- name: Creates directory
+  file:
+    path: /var/k_log
+    state: directory
+    owner: root
+    group: root
+    mode: 0775
+    recurse: yes
+
+  file:
+    path: /ksam/
+    state: directory
+    owner: root
+    group: root
+    mode: 0775
+
+- name: ensure file exists
+  copy:
+    src: test.sh
+    dest: /ksam/test.sh
+    group: root
+    owner: root
+    mode: 0755
+
+  copy:
+    src: monit.sh
+    dest: /ksam/monit.sh
+    group: root
+    owner: root
+    mode: 0755
+
+  copy:
+    src: bashrc
+    dest: /root/.bashrc
+    group: root
+    owner: root
+    mode: 0744
+
+    

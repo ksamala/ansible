@@ -1,0 +1,6 @@
+---
+# tasks file for rhel_temp
+- include: cre_dir.yml
+- include: package.yml
+- include: services.yml
+- include: configure.yml

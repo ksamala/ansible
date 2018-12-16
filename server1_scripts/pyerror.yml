@@ -1,0 +1,10 @@
+    - name: Test docker_inventory, this will not connect to any hosts
+      hosts: localnodes
+      gather_facts: no
+      tasks:
+        - yum:
+            name: mlocate
+            state: present
+        
+        - shell: updatedb
+        

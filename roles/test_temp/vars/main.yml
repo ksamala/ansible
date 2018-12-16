@@ -1,0 +1,5 @@
+---
+# vars file for test_temp
+variable_to_be_replaced: 'Hello world'
+inline_variable: 'hello again'
+test_variable: 'test this'

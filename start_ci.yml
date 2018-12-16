@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+    - name: start dock
+      block:
+      - include_role:
+         name: ci
+
+- hosts: docker_host
+  tasks:
+    - include_role:
+       name: test_temp
+
+

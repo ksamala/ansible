@@ -1,0 +1,24 @@
+
+- name: install package using jinja 
+  become: true
+  yum: name={{item}} state=present update_cache=yes
+  with_items:
+    - lsof
+    - httpd
+    - rsync
+    - git
+    - telnet
+    - net-tools
+    - mysql
+    - mlocate
+
+
+- yum: name=mlocate state=present
+  notify: update db for mlocate
+
+- name: nginx install
+  yum: name=nginx state=present update_cache=yes
+
+
+# - shell: yum install -y epel-release
+# - shell: yum install -y nginx
