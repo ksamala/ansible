@@ -9,6 +9,6 @@
 - hosts: docker_host
   tasks:
     - include_role:
-       name: test_temp
+       name: rhel_temp
 
 

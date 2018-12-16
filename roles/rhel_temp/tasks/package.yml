@@ -12,13 +12,8 @@
     - mysql
     - mlocate
 
-
 - yum: name=mlocate state=present
   notify: update db for mlocate
 
-- name: nginx install
-  yum: name=nginx state=present update_cache=yes
-
-
-# - shell: yum install -y epel-release
-# - shell: yum install -y nginx
+- shell: yum install -y epel-release
+- shell: yum install -y nginx
