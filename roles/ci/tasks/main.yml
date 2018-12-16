@@ -2,6 +2,10 @@
 - set_fact:
     containerName: "dock_ksam-{{ 999 | random }}" 
 
+#pulling image from docker hub
+- name: "pull docker image"
+  shell: "docker pull {{ dock_img }}" 
+
 - name: "start container"
   shell: "docker run -d -it --name {{ containerName }} {{ dock_img }} /bin/bash"
 
