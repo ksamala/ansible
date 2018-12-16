@@ -3,15 +3,14 @@
   tasks:
     - name: start dock
       block:
-      - include_role:
-         name: ci
+        - set_fact:
+            containerName: "dock_ksam-{{ 999 | random }}" 
+
+        - include_role:
+            name: ci
 
 - hosts: docker_host
   tasks:
-
-    - set_fact:
-        containerName: "dock_ksam-{{ 999 | random }}" 
-
     - include_role:
        name: test_temp
 
