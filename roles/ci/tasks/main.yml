@@ -7,8 +7,8 @@
   shell: "docker pull {{ dock_img }}" 
 
 - name: "start container"
-  shell: "docker run -d -it --name {{ containerName }} {{ dock_img }} /bin/bash"
-
+  shell: "docker run -d -it -v /sys/fs/cgroup:/sys/fs/cgroup:ro --cap-add SYS_ADMIN -p 80:80 --name {{ containerName }} {{ dock_img }}"
+# Fixed d-bus-connection-operation-not-permitted error
 - name: "add container to inventory"
   add_host:
     name: "docker_host"
