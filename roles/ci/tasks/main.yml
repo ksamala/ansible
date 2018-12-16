@@ -4,7 +4,7 @@
 #pulling image from docker hub
 - name: "pull docker image"
   shell: "docker pull {{ dock_img }}" 
-
+# starting cotainer
 - name: "start container"
   shell: "docker run -d -it -v /sys/fs/cgroup:/sys/fs/cgroup:ro --cap-add SYS_ADMIN -p 80:80 --name {{ containerName }} {{ dock_img }}"
 # Fixed d-bus-connection-operation-not-permitted error
@@ -14,4 +14,6 @@
     ansible_host: "{{ containerName }}"
     ansible_connection: docker
     ansible_user: root
+
+  
     
