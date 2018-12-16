@@ -8,7 +8,15 @@
 
 - hosts: docker_host
   tasks:
+
+    - set_fact:
+        containerName: "dock_ksam-{{ 999 | random }}" 
+
     - include_role:
-       name: rhel_temp
+       name: test_temp
 
 
+- hosts: localhost
+  tasks:
+    - include_role:
+       name: destroy_container
