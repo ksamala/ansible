@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: start dock
+      shell: pwd
+      with_items: 
+          - "{{ var1 }}"
+          - "{{ var2 }}"
+      shell: cd "{{ var1 }}"
+      shell: "{{ var2 }}"
+
+      # with_items: "{{ var1 }}" #one variable
+# $ ansible-playbook pass_vars.yml -v --extra-vars "{\"var1\":\"ls\"}"
+# $ ansible-playbook pass_vars.yml -v --extra-vars "{"var1" : "ls"}"
+# $ ansible-playbook pass_vars.yml -v --extra-vars "{var1 : ls}"
+# $ ansible-playbook pass_vars.yml -v -e "{var1 : pwd, var2 : ls}"
